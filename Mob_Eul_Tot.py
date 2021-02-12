@@ -49,7 +49,10 @@ def PrintMob():
     global text
     try:
         val = int(text.get())
-        pop_up.showinfo("Mobius Value", "Mobius of "+str(val)+" is: "+str(Mobius(int(val))))
+        if val<0:
+            pop_up.showerror("Error","Negative Value Entered")
+        else:    
+            pop_up.showinfo("Mobius Value", "Mobius of "+str(val)+" is: "+str(Mobius(int(val))))
     except ValueError:
         pop_up.showerror("Error","Non integer Value entered!!")
 
@@ -57,7 +60,10 @@ def PrintEu_Tot():
     global text
     try:
         val = int(text.get())
-        pop_up.showinfo("Euler's Tuotient", "Totient of "+str(val)+" is: "+str(Eu_tot(val)))
+        if val<0:
+            pop_up.showerror("Error","Negative Value Entered")
+        else:
+            pop_up.showinfo("Euler's Tuotient", "Totient of "+str(val)+" is: "+str(Eu_tot(val)))
 
     except ValueError :
         pop_up.showerror("Error","Non integer Value entered!!")
